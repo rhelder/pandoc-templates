@@ -1,0 +1,34 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage[
+$if(biblatex)$
+    biblatex,
+$endif$
+$for(pkgoption)$
+    $pkgoption$$sep$,
+$endfor$,
+]{rhelder}
+
+$if(biblatex)$
+$if(bibliography)$
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+$else$
+\addbibresource{myLibrary.bib}
+$endif$
+$endif$
+
+\title{$title$}
+\author{Russell Wright Helder}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+
+$body$
+
+\end{document}
