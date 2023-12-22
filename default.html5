@@ -18,8 +18,11 @@ $if(description-meta)$
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style>
-    $styles.html()$
+  $if(github)$
     $github-markdown-css.html()$
+  $else$
+    $styles.html()$
+  $endif$
   </style>
 $for(css)$
   <link rel="stylesheet" href="$css$" />
@@ -58,6 +61,11 @@ $if(abstract)$
 <div class="abstract-title">$abstract-title$</div>
 $abstract$
 </div>
+$endif$
+$if(notes)$
+$if(keywords)$
+<p class="keywords">| $for(keywords)$<a href="$keywords/nowrap$%20index.html">$keywords$</a>$sep$ | $endfor$ |</p>
+$endif$
 $endif$
 </header>
 $endif$
