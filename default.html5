@@ -18,15 +18,19 @@ $if(description-meta)$
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style>
-  $if(github)$
-    $github-markdown-css.html()$
+  $if(github-markdown-css)$
+  $github-markdown-css.html()$
   $else$
-    $styles.html()$
+  $styles.html()$
   $endif$
   </style>
+$if(github-markdown-css)$
+  <link rel="stylesheet" href="/Users/rhelder/.local/share/pandoc/github-markdown-css/github-markdown.css" />
+$else$
 $for(css)$
   <link rel="stylesheet" href="$css$" />
 $endfor$
+$endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
@@ -34,7 +38,11 @@ $if(math)$
   $math$
 $endif$
 </head>
+$if(github-markdown-css)$
+<article class="markdown-body">
+$else$
 <body>
+$endif$
 $for(include-before)$
 $include-before$
 $endfor$
@@ -75,5 +83,9 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
+$if(github-markdown-css)$
+</article>
+$else$
 </body>
+$endif$
 </html>
