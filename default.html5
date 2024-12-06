@@ -52,11 +52,14 @@ $if(title)$
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
+$if(handout)$
+$else$
 $for(author)$
 <p class="author">$author$</p>
 $endfor$
 $if(date)$
 <p class="date">$date$</p>
+$endif$
 $endif$
 $if(abstract)$
 <div class="abstract">
@@ -83,6 +86,19 @@ $body$
 $for(include-after)$
 $include-after$
 $endfor$
+$if(handout)$
+$if(class)$
+<div id="footer">
+  <span style="float:left">$class$, $institution$</span>
+  <span style="float:right">&copy; $copyrightyear$ $for(author)$$author$$sep$ ,$endfor$</span>
+</div>
+$else$
+<div id="footer">
+  <span style="float:left">$for(author)$$author$$sep$ ,$endfor$</span>
+  <span style="float:right">$date$</span>
+</div>
+$endif$
+$endif$
 $if(github-markdown-css)$
 </article>
 $else$
