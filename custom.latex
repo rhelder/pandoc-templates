@@ -1,3 +1,25 @@
+$if(rhhandout)$
+\documentclass[
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$if(classoption)$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$,
+$endif$
+$if(rhelderoptions)$
+  rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
+$endif$
+$if(biblatex)$
+  biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
+$endif$
+]{rhelderhandout}
+
+$else$
 \documentclass[
 $if(fontsize)$
   $fontsize$,
@@ -12,63 +34,26 @@ $endfor$,
 $endif$
 ]{$documentclass$}
 
-$if(rhelder.use)$
 \usepackage[
-$if(biblatex)$
-$if(chicago)$
-  biblatex,
-$endif$
-$endif$
 $if(rhelderoptions)$
 $for(rhelderoptions)$
   $rhelderoptions$$sep$,
 $endfor$,
 $endif$
+$if(biblatex)$
+  biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
+$endif$
 ]{rhelder}
-$if(biblatex)$
-$if(chicago)$
-$else$
-\usepackage[
-$if(biblio-style)$
-  style=$biblio-style$,
 $endif$
-$if(biblatexoptions)$
-$for(biblatexoptions)$
-  $biblatexoptions$$sep$,
-$endfor$,
+$if(geometry)$
+\geometry{$for(geometry)$$geometry$$sep$, $endfor$}
+
 $endif$
-]{biblatex}
-$endif$
-$for(bibliography)$
-\addbibresource{$bibliography$}
-$endfor$
-$endif$
-$else$
-$if(biblatex)$
-\usepackage[
-$if(biblio-style)$
-  style=$biblio-style$,
-$endif$
-$if(biblatexoptions)$
-$for(biblatexoptions)$
-  $biblatexoptions$$sep$,
-$endfor$,
-$endif$
-]{biblatex$if(chicago)$-chicago$endif$}
-$for(bibliography)$
-\addbibresource{$bibliography$}
-$endfor$
-$endif$
-$endif$
+$if(header-includes)$
 $for(header-includes)$
 $header-includes$
 $endfor$
-$if(rhelder.use)$
-$else$
-$if(rhelder.loaded)$
-$else$
-\usepackage{hyperref}
-$endif$
+
 $endif$
 \AddToHook{begindocument/before}{\hypersetup{pdfcreator={LaTeX via pandoc}}}
 \NewDocumentCommand{\tightlist}{}{%
@@ -105,6 +90,11 @@ $if(biblatex)$
 $if(suppress-bibliography)$
 $else$
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
 $endif$
 $endif$
+$for(include-after)$
+$include-after$
+
+$endfor$
 \end{document}
