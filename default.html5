@@ -87,10 +87,10 @@ $for(include-after)$
 $include-after$
 $endfor$
 $if(rhhandout)$
-$if(class)$
+$if(rhhandout.class)$
 <div id="footer">
   <span style="float:left">$class$, $institution$</span>
-  <span style="float:right">&copy; $copyrightyear$ $for(author)$$author$$sep$ ,$endfor$</span>
+  <span style="float:right">&copy; $date$ $for(author)$$author$$sep$ ,$endfor$</span>
 </div>
 $else$
 <div id="footer">
