@@ -49,6 +49,11 @@ $if(geometry)$
 \geometry{$for(geometry)$$geometry$$sep$, $endfor$}
 
 $endif$
+$if(numbersections)$
+$else$
+\setcounter{secnumdepth}{-\maxdimen}
+
+$endif$
 $if(header-includes)$
 $for(header-includes)$
 $header-includes$
@@ -68,6 +73,12 @@ $if(author)$
 $endif$
 $if(date)$
 \date{$date$}
+$endif$
+$if(class)$
+\class{$class$}
+$endif$
+$if(institution)$
+\institution{$institution$}
 $endif$
 
 \begin{document}
