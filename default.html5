@@ -49,16 +49,49 @@ $endfor$
 $if(title)$
 <header id="title-block-header">
 <h1 class="title">$title$</h1>
+$if(rhsyllabus)$
+<h2 class="subtitle">$institution$, $term$</h2>
+$else$
 $if(subtitle)$
-<p class="subtitle">$subtitle$</p>
+<h2 class="subtitle">$subtitle$</h2>
+$endif$
 $endif$
 $if(rhhandout)$
+$else$
+$if(rhsyllabus)$
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">$role$</th>
+<th style="text-align: right;">$detailsheading$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$author$</td>
+<td style="text-align: right;">$classtime$</td>
+</tr>
+<tr>
+<td style="text-align: left;">$callme$</td>
+<td style="text-align: right;">$room$</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  <a href="mailto:$email$" class="email">
+    $email$
+  </a>
+</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
 $else$
 $for(author)$
 <p class="author">$author$</p>
 $endfor$
 $if(date)$
 <p class="date">$date$</p>
+$endif$
 $endif$
 $endif$
 $if(abstract)$

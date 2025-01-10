@@ -11,6 +11,12 @@ $for(classoption)$
   $classoption$$sep$,
 $endfor$,
 $endif$
+$if(rhhandout.class)$
+  class,
+$endif$
+$if(titlesec)$
+  titlesec={$for(titlesec)$$titlesec$$sep$, $endfor$},
+$endif$
 $if(rhelderoptions)$
   rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
 $endif$
@@ -18,6 +24,31 @@ $if(biblatex)$
   biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
 $endif$
 ]{rhelderhandout}
+
+$else$
+$if(rhsyllabus)$
+\documentclass[
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(papersize)$
+  $papersize$paper,
+$endif$
+$if(classoption)$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$,
+$endif$
+$if(titlesec)$
+  titlesec={$for(titlesec)$$titlesec$$sep$, $endfor$},
+$endif$
+$if(rhelderoptions)$
+  rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
+$endif$
+$if(biblatex)$
+  biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
+$endif$
+]{rheldersyllabus}
 
 $else$
 \documentclass[
@@ -44,6 +75,7 @@ $if(biblatex)$
   biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
 $endif$
 ]{rhelder}
+$endif$
 $endif$
 $if(geometry)$
 \geometry{$for(geometry)$$geometry$$sep$, $endfor$}
@@ -79,6 +111,27 @@ $if(class)$
 $endif$
 $if(institution)$
 \institution{$institution$}
+$endif$
+$if(term)$
+\term{$term$}
+$endif$
+$if(role)$
+\role{$role$}
+$endif$
+$if(callme)$
+\callme{$callme$}
+$endif$
+$if(email)$
+\email{$email$}
+$endif$
+$if(detailsheading)$
+\detailsheading{$detailsheading$}
+$endif$
+$if(classtime)$
+\classtime{$classtime$}
+$endif$
+$if(room)$
+\room{$room$}
 $endif$
 
 \begin{document}
