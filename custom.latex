@@ -133,6 +133,10 @@ $endif$
 $if(room)$
 \room{$room$}
 $endif$
+$if(tolerance)$
+
+\tolerance=$tolerance$
+$endif$
 
 \begin{document}
 $if(title)$
