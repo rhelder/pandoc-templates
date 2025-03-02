@@ -21,7 +21,7 @@ $if(rhelderoptions)$
   rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
 $endif$
 $if(biblatex)$
-  biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
+  biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
 $endif$
 ]{rhelderhandout}
 
@@ -46,7 +46,7 @@ $if(rhelderoptions)$
   rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
 $endif$
 $if(biblatex)$
-  biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
+  biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
 $endif$
 ]{rheldersyllabus}
 
@@ -72,7 +72,7 @@ $for(rhelderoptions)$
 $endfor$,
 $endif$
 $if(biblatex)$
-  biblatex={$if(biblio-style)$$biblio-style$$else$author-date$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
+  biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
 $endif$
 ]{rhelder}
 $endif$
