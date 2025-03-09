@@ -1,4 +1,3 @@
-$if(rhhandout)$
 \documentclass[
 $if(fontsize)$
   $fontsize$,
@@ -10,73 +9,12 @@ $if(classoption)$
 $for(classoption)$
   $classoption$$sep$,
 $endfor$,
-$endif$
-$if(rhhandout.class)$
-  class,
-$endif$
-$if(titlesec)$
-  titlesec={$for(titlesec)$$titlesec$$sep$, $endfor$},
-$endif$
-$if(rhelderoptions)$
-  rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
 $endif$
 $if(biblatex)$
   biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
-$endif$
-]{rhelderhandout}
-
-$else$
-$if(rhsyllabus)$
-\documentclass[
-$if(fontsize)$
-  $fontsize$,
-$endif$
-$if(papersize)$
-  $papersize$paper,
-$endif$
-$if(classoption)$
-$for(classoption)$
-  $classoption$$sep$,
-$endfor$,
-$endif$
-$if(titlesec)$
-  titlesec={$for(titlesec)$$titlesec$$sep$, $endfor$},
-$endif$
-$if(rhelderoptions)$
-  rhelder={$for(rhelderoptions)$$rhelderoptions$$sep$, $endfor$},
-$endif$
-$if(biblatex)$
-  biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
-$endif$
-]{rheldersyllabus}
-
-$else$
-\documentclass[
-$if(fontsize)$
-  $fontsize$,
-$endif$
-$if(papersize)$
-  $papersize$paper,
-$endif$
-$if(classoption)$
-$for(classoption)$
-  $classoption$$sep$,
-$endfor$,
 $endif$
 ]{$documentclass$}
 
-\usepackage[
-$if(rhelderoptions)$
-$for(rhelderoptions)$
-  $rhelderoptions$$sep$,
-$endfor$,
-$endif$
-$if(biblatex)$
-  biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
-$endif$
-]{rhelder}
-$endif$
-$endif$
 $if(geometry)$
 \geometry{$for(geometry)$$geometry$$sep$, $endfor$}
 

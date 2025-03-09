@@ -49,16 +49,9 @@ $endfor$
 $if(title)$
 <header id="title-block-header">
 <h1 class="title">$title$</h1>
-$if(rhsyllabus)$
-<h2 class="subtitle">$institution$, $term$</h2>
-$else$
-$if(subtitle)$
-<h2 class="subtitle">$subtitle$</h2>
-$endif$
-$endif$
 $if(rhhandout)$
-$else$
-$if(rhsyllabus)$
+$elseif(rhsyllabus)$
+<h2 class="subtitle">$institution$, $term$</h2>
 <table>
 <thead>
 <tr>
@@ -85,24 +78,25 @@ $if(rhsyllabus)$
 </tr>
 </tbody>
 </table>
+$elseif(notes)$
+$if(keywords)$
+<p class="keywords">| $for(keywords)$<a href="$keywords/nowrap$%20index.html">$keywords$</a>$sep$ | $endfor$ |</p>
+$endif$
 $else$
+$if(subtitle)$
+<h2 class="subtitle">$subtitle$</h2>
+$endif$
 $for(author)$
 <p class="author">$author$</p>
 $endfor$
 $if(date)$
 <p class="date">$date$</p>
 $endif$
-$endif$
-$endif$
 $if(abstract)$
 <div class="abstract">
 <div class="abstract-title">$abstract-title$</div>
 $abstract$
 </div>
-$endif$
-$if(notes)$
-$if(keywords)$
-<p class="keywords">| $for(keywords)$<a href="$keywords/nowrap$%20index.html">$keywords$</a>$sep$ | $endfor$ |</p>
 $endif$
 $endif$
 </header>
@@ -120,7 +114,7 @@ $for(include-after)$
 $include-after$
 $endfor$
 $if(rhhandout)$
-$if(rhhandout.class)$
+$if(handout.class)$
 <div id="footer">
   <span style="float:left">$class$, $institution$</span>
   <span style="float:right">&copy; $date$ $for(author)$$author$$sep$ ,$endfor$</span>
