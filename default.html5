@@ -114,7 +114,7 @@ $for(include-after)$
 $include-after$
 $endfor$
 $if(rhhandout)$
-$if(handout.class)$
+$if(rhhandout.class)$
 <div id="footer">
   <span style="float:left">$class$, $institution$</span>
   <span style="float:right">&copy; $date$ $for(author)$$author$$sep$ ,$endfor$</span>
