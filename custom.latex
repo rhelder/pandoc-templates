@@ -50,6 +50,9 @@ $endif$
 $if(institution)$
 \institution{$institution$}
 $endif$
+$if(cyear)$
+\cyear{$cyear$}
+$endif$
 $if(term)$
 \term{$term$}
 $endif$
