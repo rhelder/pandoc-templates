@@ -14,28 +14,26 @@ $if(biblatex)$
   biblatex={$if(biblio-style)$$biblio-style$$else$authordate$endif$$if(biblatexoptions)$, $for(biblatexoptions)$$biblatexoptions$$sep$, $endfor$$endif$},
 $endif$
 ]{$documentclass$}
-
 $if(geometry)$
-\geometry{$for(geometry)$$geometry$$sep$, $endfor$}
 
+\geometry{$for(geometry)$$geometry$$sep$, $endfor$}
 $endif$
 $if(numbersections)$
 $else$
-\setcounter{secnumdepth}{-\maxdimen}
 
+\setcounter{secnumdepth}{-\maxdimen}
 $endif$
+
 $if(header-includes)$
 $for(header-includes)$
 $header-includes$
 $endfor$
-
 $endif$
 \AddToHook{begindocument/before}{\hypersetup{pdfcreator={LaTeX via pandoc}}}
 \NewDocumentCommand{\tightlist}{}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
 }
 $if(partopsep)$\setlength{\partopsep}{$partopsep$}$endif$
-
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
@@ -75,6 +73,16 @@ $endif$
 $if(room)$
 \room{$room$}
 $endif$
+$if(from)$
+\address{%
+  $for(from)$
+  $from$$sep$ \\
+  $endfor$%
+}
+$endif$
+$if(signature)$
+\signature{$signature$}
+$endif$
 $if(tolerance)$
 
 \tolerance=$tolerance$
@@ -88,6 +96,17 @@ $if(abstract)$
 $abstract$
 \end{abstract}
 $endif$
+$endif$
+$if(to)$
+\begin{letter}{%
+    $for(to)$
+    $to$$sep$ \\
+    $endfor$%
+  }
+
+$endif$
+$if(opening)$
+\opening{$opening$}
 $endif$
 
 $for(include-before)$
@@ -107,4 +126,10 @@ $for(include-after)$
 $include-after$
 
 $endfor$
+$if(closing)$
+\closing{$closing$}
+$endif$
+$if(to)$
+\end{letter}
+$endif$
 \end{document}
