@@ -18,10 +18,9 @@ $if(description-meta)$
 $endif$
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
   <style>
+  $styles.html()$
   $if(github-markdown-css)$
   $github-markdown-css.html()$
-  $else$
-  $styles.html()$
   $endif$
   </style>
 $if(github-markdown-css)$
