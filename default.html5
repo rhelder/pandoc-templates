@@ -25,7 +25,7 @@ $endif$
   $endif$
   </style>
 $if(github-markdown-css)$
-  <link rel="stylesheet" href="/Users/rhelder/.local/share/pandoc/github-markdown-css/github-markdown.css" />
+  <link rel="stylesheet" href="/home/rhelder/.local/share/pandoc/github-markdown-css/github-markdown.css" />
 $else$
 $for(css)$
   <link rel="stylesheet" href="$css$" />
