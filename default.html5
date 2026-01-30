@@ -78,8 +78,12 @@ $elseif(rhsyllabus)$
 </tbody>
 </table>
 $elseif(notes)$
-$if(keywords)$
-<p class="keywords">| $for(keywords)$<a href="$keywords/nowrap$%20index.html">$keywords$</a>$sep$ | $endfor$ |</p>
+$if(keyword_refs)$
+<p class="keywords">
+  |$for(keyword_refs/pairs)$
+ <a href="$keyword_refs.value$">$keyword_refs.key$</a>$sep$ 
+  |$endfor$ |
+</p>
 $endif$
 $else$
 $if(subtitle)$
