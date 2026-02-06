@@ -33,7 +33,7 @@ $endif$
 \NewDocumentCommand{\tightlist}{}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
 }
-$if(partopsep)$\setlength{\partopsep}{$partopsep$}$endif$
+
 $if(title)$
 \title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
