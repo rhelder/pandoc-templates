@@ -23,6 +23,8 @@ $else$
 \setcounter{secnumdepth}{-\maxdimen}
 
 $endif$
+\let\tightlist\relax
+
 $if(header-includes)$
 $for(header-includes)$
 $header-includes$
